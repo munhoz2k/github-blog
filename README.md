@@ -1,3 +1,4 @@
+<h1 align="center">GitHub Blog</h1>
 <p align="center">
  <a href="#about">About</a> • 
  <a href="#objective">Objective</a> •
@@ -6,7 +7,6 @@
  <a href="#autor">Autor</a>
 </p>
 
-<h1 align="center">GitHub Blog</h1>
 
 # About
 
