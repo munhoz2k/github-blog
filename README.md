@@ -1,4 +1,3 @@
-# GitHub Blog
 <p align="center">
  <a href="#about">About</a> • 
  <a href="#objective">Objective</a> •
@@ -7,6 +6,7 @@
  <a href="#autor">Autor</a>
 </p>
 
+# GitHub Blog
 # About
 
 This is a modern and simple page to keep an eye on your issues in your repositories.
