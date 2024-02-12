@@ -8,7 +8,7 @@
 </p>
 
 
-# About
+<h1>About</h1>
 
 This is a modern and simple page to keep an eye on your issues in your repositories.
 The design was made by Rocketseat Designers team and passed on to the students to develop the application.
