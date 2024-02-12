@@ -1,39 +1,32 @@
-# GITHUB BLOG (:hammer_and_wrench: Development)
+# GITHUB BLOG ()
 <p align="center">
- <a href="#objetivo">Objetivo</a> •
- <a href="#roadmap">Roadmap</a> • 
- <a href="#tecnologias">Tecnologias</a> • 
- <a href="#contribuicao">Contribuição</a> • 
- <a href="#licenc-a">Licença</a> • 
+ <a href="#about">About</a> • 
+ <a href="#objective">Objective</a> •
+ <a href="#technologies">Technologies</a> • 
+ <a href="#project status">Project Status</a> • 
  <a href="#autor">Autor</a>
 </p>
 
+# About
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This is a modern and simple page to keep an eye on your issues in your repositories.
+The design was made by Rocketseat Designers team and passed on to the students to develop the application.
 
-Currently, two official plugins are available:
+# Objective
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+This project is a Rocketseat's challenge to the students where they have to develop the app by themselves.
+Github Blog wont go into production, the purpose of the application is just to practice
 
-## Expanding the ESLint configuration
+# Technologies
+- [@react](https://github.com/facebook/react)
+- [@styled-components](https://github.com/styled-components/styled-components)
+- [@typescript](https://github.com/microsoft/TypeScript)
+- [@nodejs](https://github.com/nodejs/node)
+- [@vitejs](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md)
+- [@eslint](https://github.com/eslint/eslint)
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+# Project Status
 
-- Configure the top-level `parserOptions` property like this:
-
-```js
-export default {
-  // other rules...
-  parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-  },
-}
-```
-
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+<h4 align="center"> 
+	🚧  In Development...  🚧
+</h4>
