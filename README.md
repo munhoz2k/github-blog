@@ -1,4 +1,4 @@
-# GITHUB BLOG ()
+# GitHub Blog
 <p align="center">
  <a href="#about">About</a> • 
  <a href="#objective">Objective</a> •
