@@ -6,7 +6,8 @@
  <a href="#autor">Autor</a>
 </p>
 
-# GitHub Blog
+<h1 align="center">GitHub Blog</h1>
+
 # About
 
 This is a modern and simple page to keep an eye on your issues in your repositories.
@@ -25,8 +26,4 @@ Github Blog wont go into production, the purpose of the application is just to p
 - [@vitejs](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md)
 - [@eslint](https://github.com/eslint/eslint)
 
-# Project Status
-
-<h4 align="center"> 
-	🚧  In Development...  🚧
-</h4>
+# Project Status: 🚧  In Development...  🚧
