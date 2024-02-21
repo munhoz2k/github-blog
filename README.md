@@ -24,13 +24,12 @@ Github Blog wont go into production, the purpose of the application is just to p
 ```
   npm install
 ```
-<br/>
 - Or
 ```
   yarn install
 ```
 <br/>
-`Optional:` - Hello
+### `Optional:` - Hello
 
 # Technologies
 - [@react](https://github.com/facebook/react)
