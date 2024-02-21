@@ -19,6 +19,8 @@ Github Blog wont go into production, the purpose of the application is just to p
 <br/>
 <br/>
 # How to install
+
+### `Installing packages:`
 - First, clone the repository to your machine
 - After cloning the repository, open the terminal inside the cloned repository directory and type:
 ```
@@ -28,6 +30,7 @@ Github Blog wont go into production, the purpose of the application is just to p
 ```
   yarn install
 ```
+
 ### `Optional:`
 - The app uses the GitHub's api, by default the api has a maximum of 10 request per minute which is very low.
 - You can change that number to 30 just by adding a `.env` file with your GitHub Personal Access Token.
@@ -35,6 +38,16 @@ Github Blog wont go into production, the purpose of the application is just to p
 - Here is the example:
 ```env
   VITE_github_token="your_personal_token"
+```
+
+### `Run the app:`
+- Now you gotta just run it...
+```
+  npm run dev
+```
+- Or
+```
+  yarn dev
 ```
 
 # Technologies
