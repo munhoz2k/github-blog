@@ -30,12 +30,10 @@ export function IssuesContextProvider({
   const [error, setError] = useState<Error | null>(null)
   const [isFetching, setIsFetching] = useState(true)
 
-  console.log(issuesList, error, isFetching)
-
   async function fetchIssues(
     query: string = '',
-    user: string = 'facebook',
-    repo: string = 'react',
+    user: string = 'munhoz2k',
+    repo: string = 'github-blog',
   ) {
     setIsFetching(true)
     setError(null)

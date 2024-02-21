@@ -13,7 +13,9 @@ export function Post({ issue }: PostProps) {
   const maxBodyCharacters = 158
 
   function limitText(text: string) {
-    if (text.length > maxBodyCharacters) {
+    if (text === null) {
+      return null
+    } else if (text.length > maxBodyCharacters) {
       const limitedText = text.substring(0, maxBodyCharacters) + ' ...'
       return limitedText
     } else {

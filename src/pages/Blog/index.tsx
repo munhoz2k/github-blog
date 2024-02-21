@@ -9,8 +9,6 @@ import { Post } from './components/Post'
 export function Blog() {
   const { issuesList, error, isFetching } = useContext(IssuesContext)
 
-  console.log('render')
-
   if (isFetching) {
     return (
       <>

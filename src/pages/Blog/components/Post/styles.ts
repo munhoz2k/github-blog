@@ -21,16 +21,14 @@ export const PostContainer = styled.a`
   .markdown {
     white-space: pre-wrap;
 
-    h1,
-    h2,
-    h3,
-    strong {
-      color: ${(props) => props.theme['base-title']};
-      font-weight: 700;
+    * {
+      color: ${(props) => props.theme['base-text']};
     }
 
     a {
-      color: ${(props) => props.theme.blue};
+      text-decoration: none;
+      pointer-events: none;
+      cursor: default;
     }
 
     img {
