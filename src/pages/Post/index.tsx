@@ -1,3 +1,11 @@
+/* eslint-disable react/no-children-prop */
+import { useParams } from 'react-router-dom'
+import { useFetch } from '../../hooks/useFetch'
+import { formatDistanceToNow } from 'date-fns'
+import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter'
+import { oneDark } from 'react-syntax-highlighter/dist/esm/styles/prism'
+import ReactMarkdown from 'react-markdown'
+
 import {
   ArrowSquareOut,
   CalendarBlank,
@@ -6,56 +14,110 @@ import {
   GithubLogo,
 } from 'phosphor-react'
 import {
+  LoadingScreen,
   PostContainer,
-  PostContent,
   PostProfileContainer,
   PostProfileInfos,
   PostProfileTop,
 } from './styles'
+import { ptBR } from 'date-fns/locale/pt-BR'
+
+interface PostProps {
+  html_url: string
+  title: string
+  user: {
+    login: string
+    html_url: string
+  }
+  comments: number
+  created_at: string
+  body: string
+}
 
 export function Post() {
-  return (
-    <PostContainer>
-      <PostProfileContainer>
-        <PostProfileTop>
-          <a href="/">
-            <CaretLeft size={14} weight="bold" />
-            voltar
-          </a>
-          <a href="">
-            ver no github
-            <ArrowSquareOut size={14} weight="bold" />
-          </a>
-        </PostProfileTop>
+  const { postId } = useParams()
+  const {
+    data: postData,
+    error,
+    isFetching,
+  } = useFetch<PostProps>(`/repos/munhoz2k/github-blog/issues/${postId}`)
 
-        <h2>Testing the title</h2>
+  if (isFetching) {
+    return (
+      <PostContainer>
+        <LoadingScreen>Carregando...</LoadingScreen>
+      </PostContainer>
+    )
+  } else if (error) {
+    return (
+      <PostContainer>
+        <LoadingScreen>Post não encontrado!</LoadingScreen>
+      </PostContainer>
+    )
+  } else {
+    return (
+      <PostContainer>
+        <PostProfileContainer>
+          <PostProfileTop>
+            <a href="/">
+              <CaretLeft size={14} weight="bold" />
+              voltar
+            </a>
+            <a href={postData?.html_url}>
+              ver no github
+              <ArrowSquareOut size={14} weight="bold" />
+            </a>
+          </PostProfileTop>
 
-        <PostProfileInfos>
-          <a href="">
-            <GithubLogo size={16} weight="duotone" />
-            <span>github</span>
-          </a>
+          <h2>{postData?.title}</h2>
 
-          <a href="">
-            <CalendarBlank size={16} weight="duotone" />
-            <span>Há 1 dia</span>
-          </a>
+          <PostProfileInfos>
+            <a href={postData?.user.html_url}>
+              <GithubLogo size={16} weight="duotone" />
+              <span>{postData?.user?.login}</span>
+            </a>
 
-          <a href="">
-            <ChatsCircle size={16} weight="duotone" />
-            <span>5 comentários</span>
-          </a>
-        </PostProfileInfos>
-      </PostProfileContainer>
+            <a href={postData?.html_url}>
+              <CalendarBlank size={16} weight="duotone" />
+              <span>
+                {formatDistanceToNow(new Date(postData!.created_at), {
+                  addSuffix: true,
+                  locale: ptBR,
+                })}
+              </span>
+            </a>
 
-      <PostContent>
-        <p>
-          Lorem ipsum dolor, sit amet consectetur adipisicing elit. Culpa
-          incidunt quisquam doloremque similique exercitationem modi earum,
-          aliquid, consequatur voluptatum dolor laudantium asperiores
-          consequuntur, quasi reprehenderit. Nihil velit debitis eum natus!
-        </p>
-      </PostContent>
-    </PostContainer>
-  )
+            <a href={postData?.html_url}>
+              <ChatsCircle size={16} weight="duotone" />
+              <span>{postData?.comments} comentários</span>
+            </a>
+          </PostProfileInfos>
+        </PostProfileContainer>
+
+        <ReactMarkdown
+          className="markdown"
+          children={postData!.body}
+          components={{
+            code(props) {
+              const { children, className, ...rest } = props
+              const match = /language-(\w+)/.exec(className || '')
+
+              return match ? (
+                <SyntaxHighlighter
+                  PreTag="div"
+                  children={String(children).replace(/\n$/, '')}
+                  language={match[1]}
+                  style={oneDark}
+                />
+              ) : (
+                <code {...rest} className={className}>
+                  {children}
+                </code>
+              )
+            },
+          }}
+        />
+      </PostContainer>
+    )
+  }
 }

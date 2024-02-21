@@ -1,6 +1,30 @@
 import styled from 'styled-components'
 
-export const PostContainer = styled.div``
+export const PostContainer = styled.div`
+  .markdown {
+    white-space: pre-wrap;
+    padding: 2.5rem 2rem;
+
+    h1,
+    h2,
+    h3,
+    strong {
+      color: ${(props) => props.theme['base-title']};
+      font-weight: 700;
+    }
+
+    a {
+      color: ${(props) => props.theme.blue};
+    }
+
+    img {
+      width: auto;
+      height: auto;
+      max-width: 100%;
+      max-height: 100%;
+    }
+  }
+`
 
 export const PostProfileContainer = styled.div`
   display: flex;
@@ -63,6 +87,9 @@ export const PostProfileInfos = styled.div`
   }
 `
 
-export const PostContent = styled.section`
-  padding: 2.5rem 2rem;
+export const LoadingScreen = styled.h2`
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 `

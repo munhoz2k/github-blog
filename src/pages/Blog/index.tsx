@@ -1,82 +1,74 @@
+import { useContext } from 'react'
+import { IssuesContext } from '../../contexts/IssuesContext'
 import { Profile } from '../../components/Profile'
-import {
-  BlogPostsContainer,
-  BlogSearchContainer,
-  PostContainer,
-} from './styles'
+
+import { BlogPostsContainer, BlogSearchContainer } from './styles'
+import { SearchForm } from './components/SearchForm'
+import { Post } from './components/Post'
 
 export function Blog() {
-  const maxTextOnIssue = 158
+  const { issuesList, error, isFetching } = useContext(IssuesContext)
 
-  const message1 = `Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quae
-  eligendi molestiae porro sapiente quod error sequi itaque in
-  exercitationem sit`
+  console.log('render')
 
-  const message2 = `Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quae
-  eligendi molestiae porro sapiente quod error sequi itaque in
-  exercitationem sit fugiat suscipit a cumque, beatae molestias amet
-  culpa accusamus rerum.`
+  if (isFetching) {
+    return (
+      <>
+        <Profile />
 
-  const message3 = `Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quae
-  eligendi molestiae porro sapiente quod error sequi itaque in
-  exercitationem sit fugiat suscipit a cumque, beatae molestias amet
-  culpa accusamus rerum.`
-
-  const message4 = `Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quae
-  eligendi molestiae porro sapiente quod error sequi itaque in
-  exercitationem sit fugiat suscipit`
-
-  return (
-    <>
-      <Profile />
-
-      <BlogSearchContainer>
-        <div>
-          <h2>Publicações</h2>
-          <span>6 publicações</span>
-        </div>
-
-        <input type="text" placeholder="Buscar conteúdo" />
-      </BlogSearchContainer>
-
-      <BlogPostsContainer>
-        <PostContainer href="">
+        <BlogSearchContainer>
           <div>
-            <h2>Testing</h2>
-            <span>Há 1 dia</span>
+            <h2>Publicações</h2>
+            <span>0 publicações</span>
           </div>
-          <p className={message1.length > maxTextOnIssue ? 'overflow' : ''}>
-            {message1}
-          </p>
-        </PostContainer>
-        <PostContainer href="">
+
+          <SearchForm />
+        </BlogSearchContainer>
+
+        <BlogPostsContainer>
+          <h1>Carregando...</h1>
+        </BlogPostsContainer>
+      </>
+    )
+  } else if (error) {
+    return (
+      <>
+        <Profile />
+
+        <BlogSearchContainer>
           <div>
-            <h2>Testing and Testing More of the Application</h2>
-            <span>Há 1 dia</span>
+            <h2>Publicações</h2>
+            <span>0 publicações</span>
           </div>
-          <p className={message2.length > maxTextOnIssue ? 'overflow' : ''}>
-            {message2}
-          </p>
-        </PostContainer>
-        <PostContainer href="">
+
+          <SearchForm />
+        </BlogSearchContainer>
+
+        <BlogPostsContainer>
+          <h1>Não encontramos postagens...</h1>
+        </BlogPostsContainer>
+      </>
+    )
+  } else {
+    return (
+      <>
+        <Profile />
+
+        <BlogSearchContainer>
           <div>
-            <h2>Testing and Testing More of the Application</h2>
-            <span>Há 1 dia</span>
+            <h2>Publicações</h2>
+            <span>{issuesList.length} publicações</span>
           </div>
-          <p className={message3.length > maxTextOnIssue ? 'overflow' : ''}>
-            {message3}
-          </p>
-        </PostContainer>
-        <PostContainer href="">
-          <div>
-            <h2>Testing</h2>
-            <span>Há 1 dia</span>
-          </div>
-          <p className={message4.length > maxTextOnIssue ? 'overflow' : ''}>
-            {message4}
-          </p>
-        </PostContainer>
-      </BlogPostsContainer>
-    </>
-  )
+
+          <SearchForm />
+        </BlogSearchContainer>
+
+        <BlogPostsContainer>
+          {issuesList.map((issue) => {
+            return <Post key={issue.number} issue={issue} />
+          })}
+        </BlogPostsContainer>
+      </>
+    )
+  }
 }

@@ -1,9 +1,9 @@
 import styled from 'styled-components'
 
 export const ProfileContainer = styled.div`
+  display: flex;
   background: ${(props) => props.theme['base-profile']};
 
-  display: flex;
   gap: 1.75rem;
   padding: 2rem;
   margin-top: -5.5rem;
@@ -27,6 +27,13 @@ export const ProfileContainer = styled.div`
     flex-direction: column;
     align-items: center;
   }
+`
+
+export const ProfileMainContent = styled.div`
+  display: flex;
+  flex-grow: 1;
+  flex-direction: column;
+  justify-content: space-between;
 `
 
 export const ProfileTitle = styled.div`
@@ -78,4 +85,12 @@ export const ProfileInfos = styled.div`
     flex-direction: column;
     gap: 8px;
   }
+`
+
+export const LoadingScreen = styled.h1`
+  margin: auto;
+  padding: 5rem 0rem;
+
+  color: ${(props) => props.theme['base-title']};
+  font-weight: 700;
 `
