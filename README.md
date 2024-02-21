@@ -28,7 +28,14 @@ Github Blog wont go into production, the purpose of the application is just to p
 ```
   yarn install
 ```
-### `Optional:` - test
+### `Optional:`
+- The app uses the GitHub's api, by default the api has a maximum of 10 request per minute which is very low.
+- You can change that number to 30 just by adding a `.env` file with your GitHub Personal Access Token.
+- The name of the variable must be `VITE_github_token`
+- Here is the example:
+```env
+  VITE_github_token="your_personal_token"
+```
 
 # Technologies
 - [@react](https://github.com/facebook/react)
