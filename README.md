@@ -11,25 +11,21 @@
 # About
 This is a modern and simple page to keep an eye on your issues in your repositories.
 The design was made by Rocketseat Designers team and passed on to the students to develop the application.
-
-  
+<br/>
+<br/>
 # Objective
 This project is a Rocketseat's challenge to the students where they have to develop the app by themselves.
 Github Blog wont go into production, the purpose of the application is just to practice
 <br/>
 <br/>
 # How to install
-<br/>
 - First, clone the repository to your machine
 - After cloning the repository, open the terminal inside the cloned repository directory and type:
-<br/>
 ```
   npm install
 ```
 <br/>
-<br/>
 - Or
-<br/>
 ```
   yarn install
 ```
