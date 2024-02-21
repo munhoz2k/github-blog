@@ -18,8 +18,18 @@ This project is a Rocketseat's challenge to the students where they have to deve
 Github Blog wont go into production, the purpose of the application is just to practice
 
 # How to install
+
+- First, clone the repository to your machine
+- After cloning the repository, open the terminal inside the cloned repository directory and type:
+  
 ```
- npm install
+  npm install
+```
+
+Or
+  
+```
+  yarn install
 ```
 
 # Technologies
