@@ -18,18 +18,18 @@ This project is a Rocketseat's challenge to the students where they have to deve
 Github Blog wont go into production, the purpose of the application is just to practice
 <br/>
 <br/>
-# How to install
+# How to install  
   
 ### `Installing packages:`
 - First, clone the repository to your machine
 - After cloning the repository, open the terminal inside the cloned repository directory and type:
 ```
   npm install
-```
+```  
 - Or
 ```
   yarn install
-```
+```  
   
 ### `Optional:`
 - The app uses the GitHub's api, by default the api has a maximum of 10 request per minute which is very low.
