@@ -19,7 +19,7 @@ Github Blog wont go into production, the purpose of the application is just to p
 
 # How to install
 
-- First, clone the repository to your machine
+`First, clone the repository to your machine`
 `After cloning the repository, open the terminal inside the cloned repository directory and type:`
   
 ```
