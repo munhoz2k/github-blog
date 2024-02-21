@@ -28,10 +28,7 @@ Github Blog wont go into production, the purpose of the application is just to p
 ```
   yarn install
 ```
-<br/>
-<br/>
-# Optional:
-testing gg....
+### `Optional:` - test
 
 # Technologies
 - [@react](https://github.com/facebook/react)
