@@ -17,7 +17,7 @@ This project is a Rocketseat's challenge to the students where they have to deve
 Github Blog wont go into production, the purpose of the application is just to practice
 <br/>
 <br/>
-# How to install  
+# How to install
   
 ### `Installing packages:`
 - First, clone the repository to your machine
