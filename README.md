@@ -2,9 +2,8 @@
 <p align="center">
  <a href="#about">About</a> • 
  <a href="#objective">Objective</a> •
+ <a href="#how to install">How to install</a> • 
  <a href="#technologies">Technologies</a> • 
- <a href="#project status">Project Status</a> • 
- <a href="#autor">Autor</a>
 </p>
 
   
