@@ -2,7 +2,7 @@
 <p align="center">
  <a href="#about">About</a> • 
  <a href="#objective">Objective</a> •
- <a href="#how to install">How to install</a> • 
+ <a href="#how-to-install">How to install</a> • 
  <a href="#technologies">Technologies</a> • 
 </p>
 
