@@ -6,6 +6,7 @@
  <a href="#technologies">Technologies</a> • 
 </p>
 
+![giphy](https://github.com/munhoz2k/github-blog/assets/71861475/13c47d2c-c118-4c12-922c-03d82447cbb6)
   
 # About
 This is a modern and simple page to keep an eye on your issues in your repositories.
