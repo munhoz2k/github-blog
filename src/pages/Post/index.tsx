@@ -21,6 +21,7 @@ import {
   PostProfileTop,
 } from './styles'
 import { ptBR } from 'date-fns/locale/pt-BR'
+import { repoIssuesApi } from '../../libs/axios'
 
 interface PostProps {
   html_url: string
@@ -40,7 +41,7 @@ export function Post() {
     data: postData,
     error,
     isFetching,
-  } = useFetch<PostProps>(`/repos/munhoz2k/github-blog/issues/${postId}`)
+  } = useFetch<PostProps>(`${repoIssuesApi}${postId}`)
 
   if (isFetching) {
     return (

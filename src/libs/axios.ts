@@ -8,6 +8,9 @@ export const api = axios.create({
   },
 })
 
-// 'https://api.github.com/search/issues'
-// `https://api.github.com/users/${username}`
-// `https://api.github.com/repos/munhoz2k/github-blog/issues/${number}`
+export const defaultUser = 'munhoz2k'
+export const defaultRepo = 'github-blog'
+
+export const issuesApi = '/search/issues/'
+export const userApi = `/users/${defaultUser}`
+export const repoIssuesApi = `/repos/${defaultUser}/${defaultRepo}/issues/`

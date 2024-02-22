@@ -7,6 +7,7 @@ import {
   ProfileMainContent,
   ProfileTitle,
 } from './styles'
+import { userApi } from '../../libs/axios'
 
 interface UserProps {
   login: string
@@ -19,11 +20,7 @@ interface UserProps {
 }
 
 export function Profile() {
-  const {
-    data: userData,
-    error,
-    isFetching,
-  } = useFetch<UserProps>('/users/munhoz2k')
+  const { data: userData, error, isFetching } = useFetch<UserProps>(userApi)
 
   if (isFetching) {
     return (

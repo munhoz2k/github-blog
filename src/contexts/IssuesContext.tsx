@@ -1,7 +1,7 @@
 /* eslint-disable react-hooks/rules-of-hooks */
 /* eslint-disable @typescript-eslint/no-unused-vars */
 import { ReactNode, createContext, useEffect, useState } from 'react'
-import { api } from '../libs/axios'
+import { api, defaultRepo, defaultUser } from '../libs/axios'
 
 interface IssuesContextProviderProps {
   children: ReactNode
@@ -18,7 +18,7 @@ interface IssuesContextType {
   issuesList: IssuesProps[]
   error: Error | null
   isFetching: boolean
-  fetchIssues: (query?: string, user?: string, repo?: string) => Promise<void>
+  fetchIssues: (query?: string) => Promise<void>
 }
 
 export const IssuesContext = createContext({} as IssuesContextType)
@@ -30,17 +30,13 @@ export function IssuesContextProvider({
   const [error, setError] = useState<Error | null>(null)
   const [isFetching, setIsFetching] = useState(true)
 
-  async function fetchIssues(
-    query: string = '',
-    user: string = 'munhoz2k',
-    repo: string = 'github-blog',
-  ) {
+  async function fetchIssues(query: string = '') {
     setIsFetching(true)
     setError(null)
 
     const { data } = await api.get('/search/issues', {
       params: {
-        q: `${query} repo:${user}/${repo}`,
+        q: `${query} repo:${defaultUser}/${defaultRepo}`,
       },
     })
 
