@@ -1,5 +1,5 @@
-<h1 align="center">GitHub Blog</h1>
-<p align="center">
+<h1>GitHub Blog</h1>
+<p>
  <a href="#about">About</a> • 
  <a href="#objective">Objective</a> •
  <a href="#how-to-install">How to install</a> • 
