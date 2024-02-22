@@ -39,6 +39,26 @@ Github Blog wont go into production, the purpose of the application is just to p
 ```env
   VITE_github_token="your_personal_token"
 ```
+- GitHub Blog is set by default to search for issues from this repository in my profile
+- You can change this by modifying `./src/libs/axios.ts` file and putting your nickname and repository in the variables:
+```ts
+  import axios from 'axios'
+  
+  export const api = axios.create({
+    baseURL: 'https://api.github.com/',
+    headers: {
+      Authorization: 'Bearer ' + import.meta.env.VITE_github_token,
+      'X-GitHub-Api-Version': '2022-11-28',
+    },
+  })
+  
+  export const defaultUser = 'your nickname' <----------here
+  export const defaultRepo = 'repository'    <----------here
+  
+  export const issuesApi = '/search/issues/'
+  export const userApi = `/users/${defaultUser}`
+  export const repoIssuesApi = `/repos/${defaultUser}/${defaultRepo}/issues/`
+``` 
   
 ### `Run the app:`
 - Now you gotta just run it...
